@@ -14,7 +14,7 @@ const components = [
 const install = (app: App): void => {
   // 注册所有组件
   components.forEach(component => {
-    app.component(component.name, component);
+    app.component(component.name as string, component);
   });
 };
 
