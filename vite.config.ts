@@ -23,8 +23,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'packages/index.ts'),
-      name: 'IipUI',
-      fileName: (format) => `iip-ui.${format}.js`
+      name: 'IipUIVue3',
+      fileName: (format) => `iip-ui-vue3.${format}.js`
     },
     rollupOptions: {
       external: ['vue', 'element-plus'],
