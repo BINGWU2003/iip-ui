@@ -52,7 +52,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .iip-loading-mask {
-  position: fixed;
+  position: absolute;
   z-index: 2000;
   background-color: rgba(255, 255, 255, 0.9);
   margin: 0;

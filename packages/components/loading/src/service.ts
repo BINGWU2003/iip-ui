@@ -35,6 +35,15 @@ const Loading = function (options: LoadingOptions = {}): LoadingInstance {
     opts.target = document.querySelector(opts.target) as HTMLElement || document.body;
   }
 
+  // 如果不是全屏模式，确保目标元素有定位样式
+  if (!opts.fullscreen && opts.target !== document.body) {
+    const targetPosition = window.getComputedStyle(opts.target).position;
+    if (targetPosition === 'static') {
+      (opts.target as HTMLElement).style.position = 'relative';
+    }
+  }
+
+  // 添加容器到目标元素
   opts.target.appendChild(container);
 
   // 创建 VNode

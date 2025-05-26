@@ -4,6 +4,10 @@ import Demo from '../components/Demo.vue'
 
 // 导入组件示例
 import ButtonBasic from '../../components/demos/ButtonBasic.vue'
+import SelectBasic from '../../components/demos/SelectBasic.vue'
+import SelectRemote from '../../components/demos/SelectRemote.vue'
+import LoadingBasic from '../../components/demos/LoadingBasic.vue'
+import LoadingService from '../../components/demos/LoadingService.vue'
 
 // 导入自定义样式
 import './styles/index.css'
@@ -20,5 +24,9 @@ export default {
 
     // 注册所有示例组件
     app.component('ButtonBasic', ButtonBasic)
+    app.component('SelectBasic', SelectBasic)
+    app.component('SelectRemote', SelectRemote)
+    app.component('LoadingBasic', LoadingBasic)
+    app.component('LoadingService', LoadingService)
   }
 } 
