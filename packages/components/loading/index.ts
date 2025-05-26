@@ -12,7 +12,7 @@ const IipLoading = {
   service: LoadingService,
   directive: vLoading,
   install: (app: App): void => {
-    app.component(Loading.name, Loading);
+    app.component(Loading.name || 'IipLoading', Loading);
     app.use(LoadingDirective);
     // 注册 $loading 方法，方便通过 this.$loading 使用
     app.config.globalProperties.$loading = LoadingService;

@@ -24,6 +24,12 @@ export default {
           ]
         },
         {
+          text: '表单组件',
+          items: [
+            { text: 'Select 选择器', link: '/components/select' }
+          ]
+        },
+        {
           text: '反馈组件',
           items: [
             { text: 'Loading 加载', link: '/components/loading' }

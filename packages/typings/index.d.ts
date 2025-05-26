@@ -1,5 +1,6 @@
 import { App, Plugin } from 'vue';
 import { LoadingOptions, LoadingInstance } from '../components/loading/src/service';
+import { SelectOptionItem, FetchOptionsParams } from '../components/select/src/types';
 
 export interface IipUIComponent extends Plugin {
   name: string;
@@ -23,6 +24,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     IipButton: typeof import('../components/button')['default'];
     IipLoading: typeof import('../components/loading')['default'];
+    IipSelect: typeof import('../components/select')['default'];
   }
 
   export interface ComponentCustomProperties {
@@ -34,7 +36,10 @@ declare const IipUI: IipUIPlugin;
 
 export {
   IipButton,
-  IipLoading
+  IipLoading,
+  IipSelect,
+  SelectOptionItem,
+  FetchOptionsParams
 } from '../index';
 
 export default IipUI; 

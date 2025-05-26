@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <h1>IIP-UI 组件示例</h1>
-    
+
     <section class="section">
       <h2>Button 按钮</h2>
       <div class="demo-block">
@@ -101,6 +101,59 @@
         </div>
       </div>
     </section>
+
+    <section class="section">
+      <h2>Select 选择器</h2>
+      <div class="demo-block">
+        <div class="demo-row">
+          <h3>基础用法</h3>
+          <div style="width: 300px;">
+            <iip-select v-model="selectValue1" placeholder="请选择" :options-source="options" />
+          </div>
+          <p>当前选中值: {{ selectValue1 }}</p>
+        </div>
+
+        <div class="demo-row">
+          <h3>带描述信息</h3>
+          <div style="width: 300px;">
+            <iip-select v-model="selectValue2" placeholder="请选择" :options-source="optionsWithDesc" show-description />
+          </div>
+        </div>
+
+        <div class="demo-row">
+          <h3>多选模式</h3>
+          <div style="width: 300px;">
+            <iip-select v-model="selectValue3" multiple collapse-tags placeholder="请选择" :options-source="options" />
+          </div>
+          <p>当前选中值: {{ selectValue3 }}</p>
+        </div>
+
+        <div class="demo-row">
+          <h3>可搜索</h3>
+          <div style="width: 300px;">
+            <iip-select v-model="selectValue4" filterable placeholder="请选择" :options-source="options" />
+          </div>
+        </div>
+
+        <div class="demo-row">
+          <h3>分页功能</h3>
+          <div style="width: 300px;">
+            <iip-select v-model="selectValue5" placeholder="请选择" :options-source="largeOptions" pagination
+              :page-size="5" :total-count="largeOptions.length" @page-change="handlePageChange" />
+          </div>
+          <p>当前页: {{ currentPage }}</p>
+        </div>
+
+        <div class="demo-row">
+          <h3>远程搜索</h3>
+          <div style="width: 300px;">
+            <iip-select v-model="selectValue6" filterable remote placeholder="请输入关键词" :loading="remoteLoading"
+              :options-source="remoteOptions" :fetch-options="fetchRemoteOptions" @search="handleSearch" />
+          </div>
+          <p>搜索关键词: {{ searchKeyword }}</p>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -111,6 +164,7 @@ import { IipLoading } from '../packages';
 export default defineComponent({
   name: 'App',
   setup() {
+    // Loading 相关
     const loading1 = ref(false);
     const loading2 = ref(false);
 
@@ -136,12 +190,96 @@ export default defineComponent({
       console.log('操作已确认');
     };
 
+    // Select 相关
+    const selectValue1 = ref('');
+    const selectValue2 = ref('');
+    const selectValue3 = ref([]);
+    const selectValue4 = ref('');
+    const selectValue5 = ref('');
+    const selectValue6 = ref('');
+    const currentPage = ref(1);
+    const searchKeyword = ref('');
+    const remoteLoading = ref(false);
+    const remoteOptions = ref<{ value: string, label: string }[]>([]);
+
+    // 基础选项
+    const options = [
+      { value: 'option1', label: '选项1' },
+      { value: 'option2', label: '选项2' },
+      { value: 'option3', label: '选项3' },
+      { value: 'option4', label: '选项4' },
+      { value: 'option5', label: '选项5' }
+    ];
+
+    // 带描述的选项
+    const optionsWithDesc = [
+      { value: 'option1', label: '选项1', description: '这是选项1的描述信息' },
+      { value: 'option2', label: '选项2', description: '这是选项2的描述信息' },
+      { value: 'option3', label: '选项3', description: '这是选项3的描述信息' },
+      { value: 'option4', label: '选项4', description: '这是选项4的描述信息' },
+      { value: 'option5', label: '选项5', description: '这是选项5的描述信息' }
+    ];
+
+    // 大量选项用于分页演示
+    const largeOptions = Array.from({ length: 30 }, (_, index) => ({
+      value: `option${index + 1}`,
+      label: `选项${index + 1}`
+    }));
+
+    // 处理页码变化
+    const handlePageChange = (page: number) => {
+      currentPage.value = page;
+      console.log('页码变化:', page);
+    };
+
+    // 处理搜索
+    const handleSearch = (query: string) => {
+      searchKeyword.value = query;
+    };
+
+    // 模拟远程搜索
+    const fetchRemoteOptions = async (params: any) => {
+      const { keyword } = params;
+      remoteLoading.value = true;
+
+      // 模拟异步请求
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          const filteredOptions = options.filter(item =>
+            item.label.toLowerCase().includes(keyword.toLowerCase())
+          );
+          remoteOptions.value = filteredOptions;
+          remoteLoading.value = false;
+          resolve(filteredOptions);
+        }, 1000);
+      });
+    };
+
     return {
+      // Loading
       loading1,
       loading2,
       toggleLoading,
       openFullscreenLoading,
-      handleConfirm
+      handleConfirm,
+
+      // Select
+      selectValue1,
+      selectValue2,
+      selectValue3,
+      selectValue4,
+      selectValue5,
+      selectValue6,
+      options,
+      optionsWithDesc,
+      largeOptions,
+      currentPage,
+      handlePageChange,
+      searchKeyword,
+      handleSearch,
+      remoteLoading,
+      remoteOptions,
+      fetchRemoteOptions
     };
   }
 });
@@ -207,5 +345,11 @@ h3 {
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
+}
+
+p {
+  margin: 10px 0;
+  font-size: 14px;
+  color: var(--iip-text-color-secondary);
 }
 </style> 

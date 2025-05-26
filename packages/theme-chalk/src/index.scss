@@ -1,7 +1,8 @@
 /* 引入公共变量和样式 */
-@import './common/var.scss';
-@import './common/base.scss';
+@forward './common/var.scss';
+@use './common/base.scss' as base;
 
 /* 组件样式 */
-@import '../../components/button/style/index.scss';
-@import '../../components/loading/style/index.scss'; 
+@use '../../components/button/style/index.scss' as button;
+@use '../../components/loading/style/index.scss' as loading;
+@use '../../components/select/style/index.scss' as select;

@@ -13,27 +13,11 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'packages')
+      '@': resolve(__dirname, '../packages')
     }
   },
   server: {
-    port: 9999,
+    port: 3000,
     open: true
-  },
-  build: {
-    lib: {
-      entry: resolve(__dirname, 'packages/index.ts'),
-      name: 'IipUI',
-      fileName: (format) => `iip-ui.${format}.js`
-    },
-    rollupOptions: {
-      external: ['vue', 'element-plus'],
-      output: {
-        globals: {
-          vue: 'Vue',
-          'element-plus': 'ElementPlus'
-        }
-      }
-    }
   }
 }); 

@@ -10,6 +10,7 @@
   ],
   "scripts": {
     "dev": "vite --config vite.config.ts",
+    "dev:example": "vite serve examples",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "test": "vitest",

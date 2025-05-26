@@ -1,0 +1,26 @@
+/* Select 组件自定义样式 */
+.iip-select {
+  &.el-select {
+    width: 100%;
+  }
+
+  .el-select-dropdown__item {
+    padding: 0 12px;
+  }
+}
+
+.iip-select-option {
+  padding: 8px 0;
+
+  &-desc {
+    color: var(--el-text-color-secondary, #909399);
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
+
+.iip-select-pagination {
+  padding: 8px;
+  text-align: center;
+  border-top: 1px solid var(--el-border-color-lighter, #ebeef5);
+}

@@ -1,11 +1,13 @@
 import type { App } from 'vue';
 import IipButton from './components/button';
 import IipLoading from './components/loading';
+import IipSelect from './components/select';
 
 // 组件列表
 const components = [
   IipButton,
-  IipLoading
+  IipLoading,
+  IipSelect
 ];
 
 // 定义 install 方法
@@ -20,6 +22,7 @@ const install = (app: App): void => {
 export {
   IipButton,
   IipLoading,
+  IipSelect,
   install
 };
 
