@@ -107,7 +107,7 @@ export default defineComponent({
       default: false
     },
     size: {
-      type: String,
+      type: String as PropType<'default' | 'small' | 'large'>,
       default: 'default'
     },
     clearable: {
@@ -195,7 +195,7 @@ export default defineComponent({
       default: 'ArrowDown'
     },
     tagType: {
-      type: String,
+      type: String as PropType<'primary' | 'success' | 'warning' | 'info' | 'danger'>,
       default: 'info'
     },
     validateEvent: {
@@ -203,7 +203,7 @@ export default defineComponent({
       default: true
     },
     placement: {
-      type: String,
+      type: String as PropType<'auto' | 'auto-start' | 'auto-end' | 'top' | 'bottom' | 'right' | 'left' | 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end' | 'right-start' | 'right-end' | 'left-start' | 'left-end'>,
       default: 'bottom-start'
     },
     popperClass: {

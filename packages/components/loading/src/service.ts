@@ -49,12 +49,12 @@ const Loading = function (options: LoadingOptions = {}): LoadingInstance {
       }
       
       setTimeout(() => {
-        opts.target.removeChild(container);
+        (opts.target as HTMLElement).removeChild(container);
         render(null, container);
         if (options.fullscreen) {
           fullscreenInstance = undefined;
         }
-        delete instances[id];
+        delete instances[id as string];
       }, 300);
     },
   };
@@ -62,7 +62,7 @@ const Loading = function (options: LoadingOptions = {}): LoadingInstance {
   if (options.fullscreen) {
     fullscreenInstance = instance;
   }
-  instances[id] = instance;
+  instances[id as string] = instance;
 
   return instance;
 };
