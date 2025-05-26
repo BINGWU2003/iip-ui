@@ -1,6 +1,6 @@
 {
   "name": "iip-ui-vue3",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "基于 Element Plus 的 Vue 3 组件库",
   "main": "dist/iip-ui-vue3.umd.js",
   "module": "dist/iip-ui-vue3.es.js",
