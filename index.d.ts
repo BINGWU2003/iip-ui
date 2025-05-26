@@ -1,8 +1,6 @@
 import { App } from 'vue';
 
 declare module 'iip-ui-vue3' {
-  import { App } from 'vue';
-
   export interface IipUIComponent {
     name: string;
     install: (app: App) => void;
