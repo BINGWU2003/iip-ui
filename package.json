@@ -1,12 +1,13 @@
 {
   "name": "iip-ui-vue3",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "基于 Element Plus 的 Vue 3 组件库",
-  "main": "dist/iip-ui.umd.js",
-  "module": "dist/iip-ui.es.js",
-  "types": "dist/types/index.d.ts",
+  "main": "dist/iip-ui-vue3.umd.js",
+  "module": "dist/iip-ui-vue3.es.js",
+  "types": "packages/index.ts",
   "files": [
-    "dist"
+    "dist",
+    "packages"
   ],
   "scripts": {
     "dev": "vite --config vite.config.ts",
