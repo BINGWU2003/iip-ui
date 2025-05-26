@@ -6,51 +6,107 @@
 
 基础的按钮用法。
 
+<demo>
+  <ButtonBasic />
+  
+  <template #source>
+
 ```vue
 <template>
-  <iip-button>默认按钮</iip-button>
-  <iip-button type="primary">主要按钮</iip-button>
-  <iip-button type="success">成功按钮</iip-button>
-  <iip-button type="warning">警告按钮</iip-button>
-  <iip-button type="danger">危险按钮</iip-button>
-  <iip-button type="info">信息按钮</iip-button>
+  <div class="demo-button">
+    <iip-button>默认按钮</iip-button>
+    <iip-button type="primary">主要按钮</iip-button>
+    <iip-button type="success">成功按钮</iip-button>
+    <iip-button type="warning">警告按钮</iip-button>
+    <iip-button type="danger">危险按钮</iip-button>
+    <iip-button type="info">信息按钮</iip-button>
+  </div>
 </template>
+
+<style scoped>
+.demo-button .iip-button {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+</style>
 ```
+
+  </template>
+</demo>
 
 ## 按钮尺寸
 
 提供三种尺寸，默认为 `default`。
 
+<demo>
+  <div class="demo-button">
+    <iip-button size="large">大型按钮</iip-button>
+    <iip-button>默认按钮</iip-button>
+    <iip-button size="small">小型按钮</iip-button>
+  </div>
+  
+  <template #source>
+
 ```vue
 <template>
-  <iip-button size="large">大型按钮</iip-button>
-  <iip-button>默认按钮</iip-button>
-  <iip-button size="small">小型按钮</iip-button>
+  <div class="demo-button">
+    <iip-button size="large">大型按钮</iip-button>
+    <iip-button>默认按钮</iip-button>
+    <iip-button size="small">小型按钮</iip-button>
+  </div>
 </template>
+
+<style scoped>
+.demo-button .iip-button {
+  margin-right: 10px;
+}
+</style>
 ```
+
+  </template>
+</demo>
 
 ## 确认按钮
 
 点击后会弹出确认框，确认后才会触发 click 事件。
 
+<demo>
+  <div class="demo-button">
+    <iip-button type="primary" @click="handleConfirm">点击确认</iip-button>
+    <iip-button type="danger" @click="handleConfirm">删除</iip-button>
+  </div>
+  
+  <template #source>
+
 ```vue
 <template>
-  <iip-button confirm @click="handleConfirm">点击确认</iip-button>
-  <iip-button type="danger" confirm confirmMessage="确定要删除吗？" @click="handleConfirm">
-    删除
-  </iip-button>
+  <div class="demo-button">
+    <iip-button type="primary" @click="handleConfirm">点击确认</iip-button>
+    <iip-button type="danger" @click="handleConfirm">删除</iip-button>
+  </div>
 </template>
 
-<script>
-export default {
-  methods: {
-    handleConfirm() {
-      console.log('操作已确认');
-    }
-  }
-}
+<script setup>
+const handleConfirm = () => {
+  alert('操作已确认');
+};
 </script>
+
+<style scoped>
+.demo-button .iip-button {
+  margin-right: 10px;
+}
+</style>
 ```
+
+  </template>
+</demo>
+
+<script setup>
+const handleConfirm = () => {
+  alert('操作已确认');
+};
+</script>
 
 ## 属性
 

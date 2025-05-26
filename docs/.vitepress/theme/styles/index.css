@@ -1,0 +1,29 @@
+/* 自定义样式 */
+:root {
+  --vp-c-brand: #409eff;
+  --vp-c-brand-light: #79bbff;
+  --vp-c-brand-dark: #337ecc;
+}
+
+/* Demo容器样式 */
+.demo-block {
+  margin: 24px 0;
+}
+
+/* 调整演示区域的间距 */
+.demo-container .demo-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+/* 代码高亮样式调整 */
+pre code.hljs {
+  font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 16px;
+  border-radius: 4px;
+  background-color: var(--vp-code-block-bg);
+}

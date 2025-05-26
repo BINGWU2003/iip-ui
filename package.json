@@ -39,6 +39,7 @@
     "@vitejs/plugin-vue": "^4.0.0",
     "element-plus": "^2.0.0",
     "eslint": "^8.0.0",
+    "highlight.js": "^11.8.0",
     "prettier": "^2.0.0",
     "sass": "^1.0.0",
     "stylelint": "^14.0.0",
