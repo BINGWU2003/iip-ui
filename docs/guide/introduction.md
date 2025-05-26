@@ -50,8 +50,8 @@ npm install iip-ui --save
 ```js
 import { createApp } from 'vue'
 import App from './App.vue'
-import IipUI from 'iip-ui'
-import 'iip-ui/dist/style.css'
+import IipUI from 'iip-ui-vue3'
+import 'iip-ui-vue3/dist/style.css'
 
 const app = createApp(App)
 app.use(IipUI)
@@ -63,8 +63,8 @@ app.mount('#app')
 ```js
 import { createApp } from 'vue'
 import App from './App.vue'
-import { IipButton, IipLoading } from 'iip-ui'
-import 'iip-ui/dist/style.css'
+import { IipButton, IipLoading } from 'iip-ui-vue3'
+import 'iip-ui-vue3/dist/style.css'
 
 const app = createApp(App)
 app.component(IipButton.name, IipButton)
