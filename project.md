@@ -173,15 +173,15 @@ IIP-UI 是一个基于 Element Plus 的 Vue 3 组件库，提供了更符合业�
 
 1. **完整引入**：一次性注册所有组件
    ```js
-   import IipUI from 'iip-ui';
-   import 'iip-ui/dist/style.css';
+   import IipUI from 'iip-ui-vue3'
+   import 'iip-ui-vue3/dist/style.css'
    app.use(IipUI);
    ```
 
 2. **按需引入**：只引入需要的组件
    ```js
-   import { IipButton, IipLoading } from 'iip-ui';
-   import 'iip-ui/dist/style.css';
+   import { IipButton, IipLoading } from 'iip-ui-vue3'
+   import 'iip-ui-vue3/dist/style.css'
    app.component(IipButton.name, IipButton);
    ```
 
