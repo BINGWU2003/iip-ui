@@ -1,0 +1,27 @@
+/* iip-ui 自定义变量 */
+
+/* 主题颜色 */
+:root {
+  --iip-color-primary: #0078d4;
+  --iip-color-success: #35b86b;
+  --iip-color-warning: #f2c97d;
+  --iip-color-danger: #d13438;
+  --iip-color-info: #8a8886;
+  
+  /* 文本颜色 */
+  --iip-text-color-primary: #323130;
+  --iip-text-color-regular: #605e5c;
+  --iip-text-color-secondary: #8a8886;
+  --iip-text-color-placeholder: #a19f9d;
+  
+  /* 边框颜色 */
+  --iip-border-color: #d1d1d1;
+  --iip-border-color-light: #edebe9;
+  
+  /* 背景颜色 */
+  --iip-background-color: #ffffff;
+  --iip-background-color-base: #f3f2f1;
+
+  /* 字体 */
+  --iip-font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+} 

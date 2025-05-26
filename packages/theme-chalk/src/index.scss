@@ -1,0 +1,7 @@
+/* 引入公共变量和样式 */
+@import './common/var.scss';
+@import './common/base.scss';
+
+/* 组件样式 */
+@import '../../components/button/style/index.scss';
+@import '../../components/loading/style/index.scss'; 

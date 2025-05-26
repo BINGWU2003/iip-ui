@@ -1,0 +1,23 @@
+/* 自定义按钮样式 */
+.iip-button {
+  &.el-button {
+    /* 这里可以覆盖 Element Plus 的按钮样式 */
+    
+    /* 例如：调整主按钮的颜色 */
+    &--primary {
+      --el-button-bg-color: #0078d4;
+      --el-button-border-color: #0078d4;
+      --el-button-hover-bg-color: #106ebe;
+      --el-button-hover-border-color: #106ebe;
+      --el-button-active-bg-color: #005a9e;
+      --el-button-active-border-color: #005a9e;
+    }
+
+    /* 调整次按钮的样式 */
+    &--default {
+      --el-button-border-color: #d1d1d1;
+      --el-button-hover-border-color: #0078d4;
+      --el-button-hover-color: #0078d4;
+    }
+  }
+} 

@@ -1,0 +1,16 @@
+/* 基础样式 */
+[class^='iip-'] {
+  font-family: var(--iip-font-family);
+  box-sizing: border-box;
+}
+
+/* 重置样式 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--iip-font-family);
+  font-size: 14px;
+  color: var(--iip-text-color-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} 

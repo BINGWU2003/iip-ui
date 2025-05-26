@@ -1,0 +1,22 @@
+/* Loading 组件自定义样式 */
+.iip-loading-mask {
+  /* 此处可以覆盖组件内部的样式 */
+
+  .iip-loading-spinner {
+    /* 自定义加载图标的样式 */
+    .circular {
+      /* 自定义圆形加载图标 */
+      .circular-icon {
+        /* 可以调整颜色 */
+        circle {
+          stroke: var(--el-color-primary, #0078d4);
+        }
+      }
+    }
+
+    .iip-loading-text {
+      /* 自定义加载文本的样式 */
+      color: var(--el-color-primary, #0078d4);
+    }
+  }
+} 
