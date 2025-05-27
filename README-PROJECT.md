@@ -67,6 +67,12 @@ IIP-UI 是一个基于 Element Plus 的 Vue 3 组件库，提供了更符合业�
    - 作用：存放 TypeScript 类型声明文件
    - 包含：全局类型定义、组件属性类型等
    - 特点：提供完整的类型提示和检查
+   - 主要内容：
+     - 定义了IipUIComponent和IipUIPlugin等接口
+     - 扩展了Vue的GlobalComponents和ComponentCustomProperties
+     - 导出了各组件的类型定义和属性接口
+     - 声明了组件库的全局服务，如$loading服务
+     - 提供了组件特定类型，如SelectOptionItem和FetchOptionsParams
 
 ### examples 目录
 
