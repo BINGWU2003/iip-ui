@@ -1,10 +1,35 @@
-## 安装
+# IIP-UI Vue3
+
+基于 Element Plus 的 Vue 3 组件库，提供企业级中后台产品的设计语言和组件实现。
+
+[![NPM version](https://img.shields.io/npm/v/iip-ui-vue3.svg)](https://www.npmjs.com/package/iip-ui-vue3)
+[![NPM downloads](https://img.shields.io/npm/dm/iip-ui-vue3.svg)](https://www.npmjs.com/package/iip-ui-vue3)
+[![License](https://img.shields.io/npm/l/iip-ui-vue3.svg)](https://github.com/your-username/iip-ui-vue3/blob/main/LICENSE)
+
+## ✨ 特性
+
+- 🎨 基于 Element Plus 设计语言，提供一致的视觉体验
+- 📦 开箱即用的高质量 Vue 3 组件
+- 🔧 支持完整引入和按需引入
+- 💪 使用 TypeScript 编写，提供完整的类型定义
+- 🎭 支持自定义主题
+- 🌍 支持国际化
+- 📱 响应式设计
+
+## 📦 安装
 
 ```bash
+# 使用 npm
 npm install iip-ui-vue3 --save
+
+# 使用 yarn
+yarn add iip-ui-vue3
+
+# 使用 pnpm
+pnpm add iip-ui-vue3
 ```
 
-## 快速开始
+## 🔨 使用
 
 ### 完整引入
 
@@ -24,102 +49,124 @@ app.mount('#app')
 ```js
 import { createApp } from 'vue'
 import App from './App.vue'
-import { IipButton, IipLoading } from 'iip-ui-vue3'
+import { IipButton, IipLoading, IipSelect } from 'iip-ui-vue3'
 import 'iip-ui-vue3/dist/style.css'
 
 const app = createApp(App)
 app.component(IipButton.name, IipButton)
 app.component(IipLoading.name, IipLoading)
+app.component(IipSelect.name, IipSelect)
 app.mount('#app')
 ```
 
-### docs/guide/introduction.md
+## 📚 组件
 
-类似地，更新文档中的安装和引入示例：
+本组件库基于 Element Plus 扩展，提供以下组件：
 
-```markdown
-## 安装
+- **IipButton** - 按钮组件，扩展了确认对话框功能
+- **IipLoading** - 加载组件，支持指令和服务两种调用方式
+- **IipSelect** - 选择器组件，支持分页、远程搜索等高级功能
 
-```bash
-npm install iip-ui-vue3 --save
-```
+更多详细使用方法请参考文档或示例代码。
 
-### 完整引入
+## 🎨 主题定制
 
-```js
-import { createApp } from 'vue'
-import App from './App.vue'
-import IipUI from 'iip-ui-vue3'
-import 'iip-ui-vue3/dist/style.css'
+### CSS 变量
 
-const app = createApp(App)
-app.use(IipUI)
-app.mount('#app')
-```
-
-### 按需引入
-
-```js
-import { createApp } from 'vue'
-import App from './App.vue'
-import { IipButton, IipLoading } from 'iip-ui-vue3'
-import 'iip-ui-vue3/dist/style.css'
-
-const app = createApp(App)
-app.component(IipButton.name, IipButton)
-app.component(IipLoading.name, IipLoading)
-app.mount('#app')
-```
-```
-
-### docs/components/ 下的组件文档
-
-更新所有组件文档中的引入路径，例如：
-
-```js
-import { IipButton } from 'iip-ui-vue3';
-```
-
-## 3. main 和 module 字段
-
-确保 package.json 中的 main 和 module 字段指向的文件名与您的构建配置一致：
-
-```json
-{
-  "name": "iip-ui-vue3",
-  "version": "1.0.0",
-  "main": "dist/iip-ui-vue3.umd.js",
-  "module": "dist/iip-ui-vue3.es.js",
-  "types": "dist/types/index.d.ts",
-  // 其他配置...
+```css
+:root {
+  --iip-color-primary: #0078d4;
+  --iip-color-success: #107c10;
+  --iip-color-warning: #ff8c00;
+  --iip-color-danger: #d13438;
+  --iip-color-info: #605e5c;
 }
 ```
 
-## 4. 项目和组件库接口名称
+### SCSS 变量
 
-对于类型定义和组件库本身的名称，最好保持一致。在 typings 中更新接口名称，例如：
-
-- IipUIComponent → IipUIVue3Component
-- IipUIPlugin → IipUIVue3Plugin
-
-这不是必须的，但为了保持命名一致性，建议考虑。
-
-## 5. 发布前的版本控制
-
-在发布新名称的包之前，确保更新版本号：
-
-```bash
-npm version patch  # 或 minor 或 major，取决于更改的重要性
+```scss
+$iip-primary-color: #0078d4;
+$iip-success-color: #107c10;
+$iip-warning-color: #ff8c00;
+$iip-danger-color: #d13438;
+$iip-info-color: #605e5c;
 ```
 
-## 其他注意事项
+## 🔧 开发
 
-1. **导入兼容性**：如果您的库已经有用户在使用，可以考虑在新版本中保留对旧包名的兼容性导入支持。
+### 环境要求
 
-2. **文档更新**：确保所有文档和示例都使用新的包名，包括在线文档、README 和示例项目。
+- Node.js >= 16
+- Vue 3.x
+- Element Plus 2.x
 
-3. **版本号策略**：如果这是一个较大的更改，考虑使用语义化版本控制，可能需要主版本号增加（major version bump）。
+### 本地开发
 
-4. **通知用户**：在您的 README 或文档中说明包名更改的原因和迁移指南。
+```bash
+# 克隆项目
+git clone https://github.com/your-username/iip-ui-vue3.git
+cd iip-ui-vue3
 
-5. **更新项目中其他引用**：检查项目中任何可能使用旧包名的引用，如 GitHub 链接、徽章等。
+# 安装依赖
+npm install
+
+# 启动开发服务器
+npm run dev
+
+# 运行示例
+npm run dev:example
+
+# 启动文档
+npm run docs:dev
+```
+
+### 构建
+
+```bash
+# 构建组件库
+npm run build
+
+# 构建文档
+npm run docs:build
+```
+
+### 测试
+
+```bash
+# 运行测试
+npm run test
+
+# 代码检查
+npm run lint
+
+# 代码格式化
+npm run format
+```
+
+## 📄 License
+
+[MIT](LICENSE)
+
+## 🤝 贡献
+
+欢迎提交 Issue 和 Pull Request 来改进这个项目。
+
+### 贡献指南
+
+1. Fork 本仓库
+2. 创建你的特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交你的改动 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 打开一个 Pull Request
+
+## 📞 联系我们
+
+如果你有任何问题或建议，请通过以下方式联系我们：
+
+- 提交 [Issue](https://github.com/your-username/iip-ui-vue3/issues)
+- 发送邮件到: your-email@example.com
+
+## 🙏 致谢
+
+感谢 [Element Plus](https://element-plus.org/) 团队提供的优秀基础组件。
